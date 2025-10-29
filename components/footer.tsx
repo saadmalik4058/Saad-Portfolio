@@ -45,7 +45,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
             <Link href="#" className="text-2xl font-bold text-emerald-400">
-              <span className="text-white">Mirza</span>Rehan
+              <span className="text-white">Saad</span>Malik
             </Link>
             <p className="text-zinc-400 mt-2 max-w-md">
               Building exceptional digital experiences with modern frontend
@@ -62,7 +62,7 @@ export default function Footer() {
               <ArrowUp size={20} />
             </button>
             <p className="text-zinc-400 text-sm">
-              &copy; {new Date().getFullYear()} Rehan Waseem. All rights
+              &copy; {new Date().getFullYear()} Saad Malik. All rights
               reserved.
             </p>
           </div>

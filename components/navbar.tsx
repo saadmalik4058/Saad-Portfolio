@@ -75,7 +75,7 @@ export default function Navbar() {
     }
   };
 
-  const scrollToSection = (id) => {
+  const scrollToSection = (id: any) => {
     setIsOpen(false);
     gsap.to(".mobile-menu", {
       x: "100%",
@@ -92,12 +92,12 @@ export default function Navbar() {
 
   const downloadResume = () => {
     // Path to the PDF file in your public folder
-    const pdfPath = "/resume/Rehan-Waseem-Resume.pdf";
+    const pdfPath = "/resume/Saad-Resume.pdf";
 
     // Create a temporary anchor element
     const link = document.createElement("a");
     link.href = pdfPath;
-    link.download = "Rehan-Waseem-Resume.pdf"; // Name that will appear when downloading
+    link.download = "Saad-Resume.pdf"; // Name that will appear when downloading
     link.target = "_blank";
 
     // Append to body, click, and remove
@@ -107,13 +107,14 @@ export default function Navbar() {
   };
   return (
     <header
+    style={{marginTop: '51px'}}
       className={`fixed w-full self-center z-50 transition-all duration-300 ${
         scrolled ? "bg-zinc-900 py-3 shadow-lg" : "bg-zinc-900 py-5"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
         <a href="#" className="text-2xl font-bold text-emerald-400">
-          <span className="text-white">Mirza</span>Rehan
+          <span className="text-white">Saad</span>Malik
         </a>
 
         <nav className="hidden md:flex space-x-8">

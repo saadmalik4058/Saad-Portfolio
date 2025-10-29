@@ -186,7 +186,7 @@ export default function HeroSection() {
           >
             <span className="block text-zinc-200">Hey, I’m</span>
             <span className="bg-gradient-to-r from-emerald-400 via-teal-400  to-emerald-700 bg-clip-text text-transparent animate-gradient">
-              Rehan
+              Saad
             </span>
           </h1>
 
@@ -195,7 +195,7 @@ export default function HeroSection() {
             className="md:text-xl sm:text-[18px] lg:text-3xl text-zinc-300 mb-4 font-medium leading-tight md:leading-relaxed"
           >
             I’m a web development enthusiast with{" "}
-            <span className="text-emerald-400 font-bold">three years</span> of
+            <span className="text-emerald-400 font-bold">two years</span> of
             experience, driven by a passion for crafting intuitive digital
             solutions that bring ideas to life online.
           </p>
@@ -204,9 +204,8 @@ export default function HeroSection() {
             ref={blockchainRef}
             className="inline-block text-zinc-400 text-lg md:text-xl mb-2 mt-4 italic bg-zinc-800/50 px-4 py-2 rounded-lg border border-emerald-500/30"
           >
-            Passionate about exploring{" "}
-            <span className="text-emerald-400">Ethereum</span> and blockchain
-            technologies to shape the future of decentralized applications.
+            Passionate {" "}
+            <span className="text-emerald-400">Frontend Developer</span>  focused on building fast, scalable, and user-friendly web applications with React and Next.js.
           </span>
 
           <div
@@ -240,30 +239,6 @@ export default function HeroSection() {
               Get in Touch
             </Button>
           </div>
-
-          {/* <div
-            ref={socialsRef}
-            className="flex w-full mt-10 justify-center items-center space-x-6"
-          >
-            <a
-              href="https://github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-zinc-300 hover:text-emerald-400 transition-colors transform hover:scale-110 duration-300"
-            >
-              <Github size={28} />
-              <span className="sr-only">GitHub</span>
-            </a>
-            <a
-              href="https://linkedin.com/in/rehan-mirza-7806a626a/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-zinc-300 hover:text-emerald-400 transition-colors transform hover:scale-110 duration-300"
-            >
-              <Linkedin size={28} />
-              <span className="sr-only">LinkedIn</span>
-            </a>
-          </div> */}
         </div>
       </div>
     </section>

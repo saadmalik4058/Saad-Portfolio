@@ -97,16 +97,15 @@ export default function SkillsSection() {
       level: 95,
     },
     {
-      name: "Desktop Applications",
+      name: "API Integration",
       icon: <Cpu size={24} />,
       description:
-        "Building cross-platform desktop solutions with web technologies",
+        "Skilled in integrating RESTful APIs using Axios for efficient data fetching.",
       technologies: [
-        "Electron.js",
-        "IPC Communication",
-        "Native APIs",
-        "Desktop UX",
-      ],
+        "RESTful APIs",
+        "Axios",
+        "Authentication"
+            ],
       color: "red",
       level: 80,
     },
@@ -115,7 +114,7 @@ export default function SkillsSection() {
       icon: <GitBranch size={24} />,
       description:
         "Managing professional development workflows and team collaboration",
-      technologies: ["Git", "GitHub"],
+      technologies: ["Git", "GitLab", "GitHub"],
       color: "green",
       level: 90,
     },

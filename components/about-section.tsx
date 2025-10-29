@@ -78,11 +78,11 @@ export default function AboutSection() {
   }, []);
 
   const downloadResume = () => {
-    const pdfPath = "/resume/Rehan-Waseem-Resume.pdf";
+    const pdfPath = "/resume/Saad-Resume.pdf";
 
     const link = document.createElement("a");
     link.href = pdfPath;
-    link.download = "Rehan-Waseem-Resume.pdf";
+    link.download = "Saad-Resume.pdf";
     link.target = "_blank";
 
     document.body.appendChild(link);
@@ -135,7 +135,7 @@ export default function AboutSection() {
                 >
                   <div className="text-center">
                     <span className="block text-4xl font-bold text-blue-400">
-                      3
+                      2
                     </span>
                     <span className="text-slate-300 text-sm">
                       Years of Experience
@@ -153,11 +153,11 @@ export default function AboutSection() {
             <div className="space-y-8">
               <div>
                 <h4 className="text-2xl md:text-3xl font-bold mb-4 text-white">
-                  <span className="text-emerald-400">Rehan Mirza</span> —
+                  <span className="text-emerald-400">Saad Malik</span> —
                   Software Developer
                 </h4>
                 <p className="text-lg text-slate-300 leading-relaxed">
-                  I'm a passionate Software Developer with three years of
+                  I'm a passionate Software Developer with two years of
                   experience crafting exceptional digital experiences. My
                   expertise lies in building modern, responsive, and
                   performance-optimized web applications that solve complex
@@ -193,13 +193,13 @@ export default function AboutSection() {
                     </span>{" "}
                     — Proficient in
                     <span className="text-emerald-300"> Git</span>,
-                    <span className="text-emerald-300"> Webpack</span>, and
-                    <span className="text-emerald-300"> Babel</span> to develop
+                    <span className="text-emerald-300"> GitLab</span>, and
+                    <span className="text-emerald-300"> Webpack</span> to develop
                     maintainable, efficient code.
                   </p>
                 </div>
 
-                <div className="flex items-start">
+                {/* <div className="flex items-start">
                   <div className="flex-shrink-0 mt-1">
                     <ChevronRight className="h-5 w-5 text-emerald-400" />
                   </div>
@@ -212,7 +212,7 @@ export default function AboutSection() {
                     blockchain technology to build innovative decentralized
                     applications.
                   </p>
-                </div>
+                </div> */}
               </div>
 
               <div className="py-4">

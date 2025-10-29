@@ -20,33 +20,30 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "Woov Club",
+    title: "Linkgraph",
     description:
       "Sports Facility Management Solution, Manager application and Showcase Site using Next.js and React.js",
     screenshots: [
       {
-        url: "/woovclub-dashboard.jpg",
+        url: "/linkgraph1.jpg",
         alt: "Dashboard overview",
       },
-      { url: "/woov-club-1.png", alt: "woov-club-1" },
-      { url: "/woov-club-2.png", alt: "woov-club-2" },
-      { url: "/woov-club-3.png", alt: "woov-club-3" },
-      { url: "/woov-club-4.png", alt: "woov-club-4" },
-      { url: "/woov-club-5.png", alt: "woov-club-5" },
+      { url: "/linkgraph2.jpg", alt: "linkgraph2" },
+      { url: "/linkgraph3.png", alt: "linkgraph3" },
+      { url: "/linkgraph4.png", alt: "linkgraph4" },
     ],
     technologies: [
       "React",
       "Next.js",
       "TypeScript",
-      "Tailwind CSS",
+      "Module CSS",
       "GSAP",
       "Redux Toolkit",
-      "React Query",
       "React Router",
       "React-Hook-Form",
       "React i18next",
     ],
-    demo: "https://woovclub.com",
+    demo: "https://www.linkgraph.com/",
   },
   {
     title: "Zoaverse | Design",

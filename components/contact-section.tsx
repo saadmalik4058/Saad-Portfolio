@@ -117,10 +117,10 @@ export default function ContactSection() {
               <div>
                 <h4 className="font-medium mb-1">Email</h4>
                 <a
-                  href="mailto:mirzarehan708@gmail.com"
+                  href="mailto:saadmalik459@gmail.com"
                   className="text-zinc-300 hover:text-emerald-400 transition-colors break-all"
                 >
-                  mirzarehan708@gmail.com
+                  saadmalik459@gmail.com
                 </a>
               </div>
             </div>
@@ -132,10 +132,10 @@ export default function ContactSection() {
               <div>
                 <h4 className="font-medium mb-1">Phone</h4>
                 <a
-                  href="tel:+923006453153"
+                  href="tel:+923346226266"
                   className="text-zinc-300 hover:text-emerald-400 transition-colors"
                 >
-                  +92 300 6453153
+                  +92 334 6226266
                 </a>
               </div>
             </div>
@@ -144,7 +144,7 @@ export default function ContactSection() {
               <h4 className="font-medium mb-4">Follow Me</h4>
               <div className="flex space-x-4">
                 <a
-                  href="https://github.com/MirzaRehan53"
+                  href="https://github.com/saadmalik4058"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-zinc-800 hover:bg-emerald-500/20 p-3 rounded-full text-zinc-300 hover:text-emerald-400 transition-all"
@@ -160,7 +160,7 @@ export default function ContactSection() {
                   </svg>
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/rehan-mirza-7806a626a/"
+                  href="https://www.linkedin.com/in/saad-malik-b78589284/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-zinc-800 hover:bg-emerald-500/20 p-3 rounded-full text-zinc-300 hover:text-emerald-400 transition-all"
