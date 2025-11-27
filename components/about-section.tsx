@@ -121,7 +121,7 @@ export default function AboutSection() {
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-emerald-400 via-emerald-500 to-purple-500 blur-sm opacity-70 -m-0.5"></div>
               <div className="group relative bg-slate-900 p-2 rounded-2xl">
                 <Image
-                  src="/Profile-Photoroom.png"
+                  src="/profilePic.jpeg"
                   alt="Rehan Mirza"
                   width={600}
                   height={800}

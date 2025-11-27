@@ -57,47 +57,47 @@ const projects: Project[] = [
     technologies: ["Next.js", "GSAP", "Tailwind CSS,React i18n"],
     demo: "https://zoaverse.com",
   },
-  {
-    title: "FID World | Unified Web Platform ",
-    description: "Responsive UI to showcase Zoaverse and WOOV Club Projects ",
-    screenshots: [
-      { url: "/fid-world-1.png", alt: "fid-world-1" },
-      { url: "/fid-world-2.png", alt: "fid-2" },
-      { url: "/fid-world-3.png", alt: "fid-3" },
-    ],
-    technologies: ["Next.js", "Tailwind CSS"],
-    demo: "https://fid-world.com",
-  },
-  {
-    title: "Cost Calculator",
-    description: "Business Financial Analysis Tool",
-    screenshots: [
-      { url: "/cost-calculator-app.png", alt: "cost-1" },
-      { url: "/cost-calculator-2.png", alt: "cost-2" },
-    ],
-    technologies: [
-      "React.js",
-      "Tailwind CSS",
-      "Redux Toolkit",
-      "React-Hook-Form",
-    ],
-    demo: "https://costing-app-six.vercel.app/",
-  },
-  {
-    title: "Feative Studios",
-    description:
-      "Gaming and Metaverse Showcase Website using Next.js with Tailwind CSS",
-    screenshots: [{ url: "/feative-studios.png", alt: "feative studios" }],
-    technologies: ["Next.js", "Tailwind CSS"],
-    demo: "https://www.feativestudios.com",
-  },
-  {
-    title: "Pizza Delivery ",
-    description: "Pizza Delivery Project via Redux Toolkit",
-    screenshots: [{ url: "/Pizza-delivery.png", alt: "Pizza Delivery" }],
-    technologies: ["React.js", "Redux Toolkit"],
-    demo: "https://pizza-delivery-app-orcin.vercel.app/",
-  },
+  // {
+  //   title: "FID World | Unified Web Platform ",
+  //   description: "Responsive UI to showcase Zoaverse and WOOV Club Projects ",
+  //   screenshots: [
+  //     { url: "/fid-world-1.png", alt: "fid-world-1" },
+  //     { url: "/fid-world-2.png", alt: "fid-2" },
+  //     { url: "/fid-world-3.png", alt: "fid-3" },
+  //   ],
+  //   technologies: ["Next.js", "Tailwind CSS"],
+  //   demo: "https://fid-world.com",
+  // },
+  // {
+  //   title: "Cost Calculator",
+  //   description: "Business Financial Analysis Tool",
+  //   screenshots: [
+  //     { url: "/cost-calculator-app.png", alt: "cost-1" },
+  //     { url: "/cost-calculator-2.png", alt: "cost-2" },
+  //   ],
+  //   technologies: [
+  //     "React.js",
+  //     "Tailwind CSS",
+  //     "Redux Toolkit",
+  //     "React-Hook-Form",
+  //   ],
+  //   demo: "https://costing-app-six.vercel.app/",
+  // },
+  // {
+  //   title: "Feative Studios",
+  //   description:
+  //     "Gaming and Metaverse Showcase Website using Next.js with Tailwind CSS",
+  //   screenshots: [{ url: "/feative-studios.png", alt: "feative studios" }],
+  //   technologies: ["Next.js", "Tailwind CSS"],
+  //   demo: "https://www.feativestudios.com",
+  // },
+  // {
+  //   title: "Pizza Delivery ",
+  //   description: "Pizza Delivery Project via Redux Toolkit",
+  //   screenshots: [{ url: "/Pizza-delivery.png", alt: "Pizza Delivery" }],
+  //   technologies: ["React.js", "Redux Toolkit"],
+  //   demo: "https://pizza-delivery-app-orcin.vercel.app/",
+  // },
 ];
 
 export default function ProjectsSection() {
@@ -132,7 +132,7 @@ export default function ProjectsSection() {
           trigger: galleryRef.current,
           start: "top 20%",
           end: () => `+=${galleryRef.current?.scrollWidth}`,
-          scrub: 1,
+          scrub: projects.length,
           pin: true,
           pinSpacing: true,
           invalidateOnRefresh: true,
