@@ -15,7 +15,7 @@ interface Project {
   description: string;
   screenshots: Screenshot[];
   technologies: string[];
-  demo: string;
+  demo?: string;
 }
 
 const projects: Project[] = [
@@ -46,16 +46,13 @@ const projects: Project[] = [
     demo: "https://www.linkgraph.com/",
   },
   {
-    title: "Zoaverse | Design",
+    title: "Ecommerce | Design",
     description:
-      " Virtual Events Platform | Metaverse-inspired Digital Events Solution ",
+      " Ecommerce Website | Online Shopping Platform ",
     screenshots: [
-      { url: "/zoaverse-1.png", alt: "zoaverse-1" },
-      { url: "/zoaverse-2.png", alt: "zoaverse-2" },
-      { url: "/zoaverse-3.png", alt: "zoaverse-3" },
+      { url: "/Ecommerce.png", alt: "Ecommerce-1" },
     ],
-    technologies: ["Next.js", "GSAP", "Tailwind CSS,React i18n"],
-    demo: "https://zoaverse.com",
+    technologies: ["Next.js", "GSAP", "Tailwind CSS"]
   },
   // {
   //   title: "FID World | Unified Web Platform ",
@@ -344,10 +341,12 @@ function ProjectCard({ project }: { project: Project }) {
           ))}
         </div>
 
-        <div className="absolute  top-6 sm:bottom-8 right-8">
+      {
+        project.demo && (
+          <div className="absolute  top-6 sm:bottom-8 right-8">
           <a
-            href={project.demo}
-            target={`${project.demo.includes("#") ? "_self" : "_blank"}`}
+            href={project?.demo}
+            target={`${project?.demo?.includes("#") ? "_self" : "_blank"}`}
             // target=""
             rel="noopener noreferrer"
             className="inline-flex items-center px-2 md:px-4 py-1 md:py-2 bg-emerald-500 text-white rounded-lg shadow-lg hover:bg-emerald-600 transition-all duration-300"
@@ -368,6 +367,8 @@ function ProjectCard({ project }: { project: Project }) {
             </svg>
           </a>
         </div>
+        )
+      }
       </div>
     </div>
   );

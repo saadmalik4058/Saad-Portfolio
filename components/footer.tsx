@@ -1,17 +1,18 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import Link from "next/link";
 import { ArrowUp } from "lucide-react";
 
 export default function Footer() {
   const footerRef = useRef<HTMLElement>(null);
+  const [year, setYear] = useState<number | null>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
       // Animate footer elements
-      gsap.from(footerRef.current?.children, {
+      gsap.from(footerRef.current?.children as any, {
         y: 20,
         opacity: 0,
         duration: 0.8,
@@ -25,8 +26,13 @@ export default function Footer() {
       });
     }, footerRef);
 
+    // Set current year on client only to avoid hydration issues with Date
+    if (year === null) {
+      setYear(new Date().getFullYear());
+    }
+
     return () => ctx.revert();
-  }, []);
+  }, [year]);
 
   const scrollToTop = () => {
     gsap.to(window, {
@@ -62,8 +68,7 @@ export default function Footer() {
               <ArrowUp size={20} />
             </button>
             <p className="text-zinc-400 text-sm">
-              &copy; {new Date().getFullYear()} Saad Malik. All rights
-              reserved.
+              &copy; {year ?? ""} Saad Malik. All rights reserved.
             </p>
           </div>
         </div>

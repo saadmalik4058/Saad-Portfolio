@@ -78,11 +78,11 @@ export default function AboutSection() {
   }, []);
 
   const downloadResume = () => {
-    const pdfPath = "/resume/Saad-Resume.pdf";
+    const pdfPath = "/resume/updatedResume.pdf";
 
     const link = document.createElement("a");
     link.href = pdfPath;
-    link.download = "Saad-Resume.pdf";
+    link.download = "updatedResume.pdf";
     link.target = "_blank";
 
     document.body.appendChild(link);

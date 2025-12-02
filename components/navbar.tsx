@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [year, setYear] = useState<number | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,6 +25,11 @@ export default function Navbar() {
 
   // Add effect to control body scroll and backdrop when menu is open
   useEffect(() => {
+    // Set current year on client only to avoid hydration issues with Date
+    if (year === null) {
+      setYear(new Date().getFullYear());
+    }
+
     if (isOpen) {
       // Prevent scrolling on the body when menu is open
       document.body.style.overflow = "hidden";
@@ -92,12 +98,12 @@ export default function Navbar() {
 
   const downloadResume = () => {
     // Path to the PDF file in your public folder
-    const pdfPath = "/resume/Saad-Resume.pdf";
+    const pdfPath = "/resume/updatedResume.pdf";
 
     // Create a temporary anchor element
     const link = document.createElement("a");
     link.href = pdfPath;
-    link.download = "Saad-Resume.pdf"; // Name that will appear when downloading
+    link.download = "updatedResume.pdf"; // Name that will appear when downloading
     link.target = "_blank";
 
     // Append to body, click, and remove
@@ -170,7 +176,7 @@ export default function Navbar() {
           </nav>
           <div className="mt-auto">
             <p className="text-zinc-400 text-sm">
-              © {new Date().getFullYear()} Rehan Waseem
+              © {year ?? ""} Rehan Waseem
             </p>
           </div>
         </div>
