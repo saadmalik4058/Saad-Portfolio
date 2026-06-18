@@ -22,7 +22,7 @@ export default function ContactSection() {
 
     const ctx = gsap.context(() => {
       // Animate heading
-      gsap.from(headingRef.current?.children, {
+      gsap.from(headingRef.current?.children ?? [], {
         y: 50,
         opacity: 0,
         duration: 0.8,
@@ -49,7 +49,7 @@ export default function ContactSection() {
       });
 
       // Animate info
-      gsap.from(infoRef.current?.children, {
+      gsap.from(infoRef.current?.children ?? [], {
         x: -50,
         opacity: 0,
         duration: 0.8,

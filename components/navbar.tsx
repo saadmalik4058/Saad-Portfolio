@@ -4,6 +4,9 @@ import { useState, useEffect } from "react";
 import { gsap } from "gsap";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { NAV_ITEMS } from "@/utils/const/navigation";
+import { downloadResume } from "@/utils/function/download-resume";
+import { scrollToSection as smoothScrollTo } from "@/utils/function/scroll";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -81,7 +84,7 @@ export default function Navbar() {
     }
   };
 
-  const scrollToSection = (id: any) => {
+  const scrollToSection = (id: string) => {
     setIsOpen(false);
     gsap.to(".mobile-menu", {
       x: "100%",
@@ -89,28 +92,9 @@ export default function Navbar() {
       ease: "power3.in",
     });
 
-    gsap.to(window, {
-      duration: 1,
-      scrollTo: { y: `#${id}`, offsetY: 80 },
-      ease: "power3.inOut",
-    });
+    smoothScrollTo(id);
   };
 
-  const downloadResume = () => {
-    // Path to the PDF file in your public folder
-    const pdfPath = "/resume/updatedResume.pdf";
-
-    // Create a temporary anchor element
-    const link = document.createElement("a");
-    link.href = pdfPath;
-    link.download = "updatedResume.pdf"; // Name that will appear when downloading
-    link.target = "_blank";
-
-    // Append to body, click, and remove
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
   return (
     <header
     style={{marginTop: '51px'}}
@@ -124,7 +108,7 @@ export default function Navbar() {
         </a>
 
         <nav className="hidden md:flex space-x-8">
-          {["home", "about", "skills", "projects", "contact"].map((item) => (
+          {NAV_ITEMS.map((item) => (
             <button
               key={item}
               onClick={() => scrollToSection(item)}
@@ -158,7 +142,7 @@ export default function Navbar() {
             </button>
           </div>
           <nav className="flex flex-col space-y-6 mt-8">
-            {["home", "about", "skills", "projects", "contact"].map((item) => (
+            {NAV_ITEMS.map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item)}

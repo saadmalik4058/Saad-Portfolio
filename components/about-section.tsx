@@ -6,13 +6,14 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { FileText, ChevronRight, BriefcaseBusiness, Code } from "lucide-react";
+import { downloadResume } from "@/utils/function/download-resume";
 
 export default function AboutSection() {
-  const sectionRef = useRef(null);
-  const imageContainerRef = useRef(null);
-  const contentRef = useRef(null);
-  const experienceCardRef = useRef(null);
-  const highlightsRef = useRef(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const imageContainerRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const experienceCardRef = useRef<HTMLDivElement>(null);
+  const highlightsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -32,7 +33,7 @@ export default function AboutSection() {
         },
       });
 
-      gsap.from(contentRef.current?.children, {
+      gsap.from(contentRef.current?.children ?? [], {
         y: 60,
         opacity: 0,
         duration: 1,
@@ -59,7 +60,7 @@ export default function AboutSection() {
         },
       });
 
-      gsap.from(highlightsRef.current?.children, {
+      gsap.from(highlightsRef.current?.children ?? [], {
         x: -30,
         opacity: 0,
         duration: 0.8,
@@ -76,19 +77,6 @@ export default function AboutSection() {
 
     return () => ctx.revert();
   }, []);
-
-  const downloadResume = () => {
-    const pdfPath = "/resume/updatedResume.pdf";
-
-    const link = document.createElement("a");
-    link.href = pdfPath;
-    link.download = "updatedResume.pdf";
-    link.target = "_blank";
-
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
 
   return (
     <section

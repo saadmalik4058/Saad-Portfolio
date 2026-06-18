@@ -1,124 +1,16 @@
 "use client";
 
-import type React from "react";
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import {
-  Code2,
-  Palette,
-  Cpu,
-  GitBranch,
-  Zap,
-  Sparkles,
-  FileCode,
-} from "lucide-react";
-
-interface Skill {
-  name: string;
-  icon: React.ReactNode;
-  description: string;
-  technologies: string[];
-  color: string;
-  level?: number;
-}
+import { skills } from "@/utils/const/skills";
+import { getColorClasses } from "@/utils/function/get-color-classes";
 
 export default function SkillsSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const headingRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
   const [isClient, setIsClient] = useState(false);
-
-  const skills: Skill[] = [
-    {
-      name: "Frontend Development",
-      icon: <Code2 size={24} />,
-      description:
-        "Building responsive and interactive user interfaces with modern web technologies",
-      technologies: ["React.js", "Next.js", "TypeScript", "HTML5", "CSS3"],
-      color: "emerald",
-      level: 95,
-    },
-    {
-      name: "React Ecosystem",
-      icon: <FileCode size={24} />,
-      description:
-        "Creating production-grade applications with React and related technologies",
-      technologies: [
-        "React.js",
-        "React Hooks",
-        "Context API",
-        "Redux",
-        "React Router",
-      ],
-      color: "sky",
-      level: 90,
-    },
-    {
-      name: "Next.js Framework",
-      icon: <Zap size={24} />,
-      description:
-        "Developing optimized server-side rendered and static React applications",
-      technologies: [
-        "Next.js",
-        "App Router",
-        "Server Components",
-        "API Routes",
-        "SSR/SSG",
-      ],
-      color: "purple",
-      level: 85,
-    },
-    {
-      name: "TypeScript",
-      icon: <Code2 size={24} />,
-      description:
-        "Implementing type-safe, maintainable JavaScript code for enterprise applications",
-      technologies: ["TypeScript", "Interfaces", "Type Guards"],
-      color: "blue",
-      level: 88,
-    },
-    {
-      name: "Animation & Interaction",
-      icon: <Sparkles size={24} />,
-      description:
-        "Creating high-performance animations and engaging user experiences",
-      technologies: ["GSAP", "Framer Motion"],
-      color: "amber",
-      level: 92,
-    },
-    {
-      name: "UI Design Systems",
-      icon: <Palette size={24} />,
-      description:
-        "Implementing scalable design systems and component libraries",
-      technologies: ["Tailwind CSS", "Responsive Design"],
-      color: "pink",
-      level: 95,
-    },
-    {
-      name: "API Integration",
-      icon: <Cpu size={24} />,
-      description:
-        "Skilled in integrating RESTful APIs using Axios for efficient data fetching.",
-      technologies: [
-        "RESTful APIs",
-        "Axios",
-        "Authentication"
-            ],
-      color: "red",
-      level: 80,
-    },
-    {
-      name: "Development Workflow",
-      icon: <GitBranch size={24} />,
-      description:
-        "Managing professional development workflows and team collaboration",
-      technologies: ["Git", "GitLab", "GitHub"],
-      color: "green",
-      level: 90,
-    },
-  ];
 
   useEffect(() => {
     setIsClient(true);
@@ -133,7 +25,7 @@ export default function SkillsSection() {
       ScrollTrigger.refresh();
 
       gsap.fromTo(
-        headingRef.current?.children,
+        headingRef.current?.children ?? [],
         { y: 50, opacity: 0 },
         {
           y: 0,
@@ -206,78 +98,6 @@ export default function SkillsSection() {
 
     return () => ctx.revert();
   }, [isClient]);
-
-  const getColorClasses = (color: string) => {
-    const colorMap: Record<
-      string,
-      {
-        bg: string;
-        text: string;
-        border: string;
-        progress: string;
-        shadow: string;
-      }
-    > = {
-      emerald: {
-        bg: "bg-emerald-500/10",
-        text: "text-emerald-400",
-        border: "border-emerald-500/20",
-        progress: "bg-emerald-500",
-        shadow: "shadow-emerald-500/20",
-      },
-      purple: {
-        bg: "bg-purple-500/10",
-        text: "text-purple-400",
-        border: "border-purple-500/20",
-        progress: "bg-purple-500",
-        shadow: "shadow-purple-500/20",
-      },
-      pink: {
-        bg: "bg-pink-500/10",
-        text: "text-pink-400",
-        border: "border-pink-500/20",
-        progress: "bg-pink-500",
-        shadow: "shadow-pink-500/20",
-      },
-      amber: {
-        bg: "bg-amber-500/10",
-        text: "text-amber-400",
-        border: "border-amber-500/20",
-        progress: "bg-amber-500",
-        shadow: "shadow-amber-500/20",
-      },
-      sky: {
-        bg: "bg-sky-500/10",
-        text: "text-sky-400",
-        border: "border-sky-500/20",
-        progress: "bg-sky-500",
-        shadow: "shadow-sky-500/20",
-      },
-      blue: {
-        bg: "bg-blue-500/10",
-        text: "text-blue-400",
-        border: "border-blue-500/20",
-        progress: "bg-blue-500",
-        shadow: "shadow-blue-500/20",
-      },
-      red: {
-        bg: "bg-rose-500/10",
-        text: "text-rose-400",
-        border: "border-rose-500/20",
-        progress: "bg-rose-500",
-        shadow: "shadow-rose-500/20",
-      },
-      green: {
-        bg: "bg-green-500/10",
-        text: "text-green-400",
-        border: "border-green-500/20",
-        progress: "bg-green-500",
-        shadow: "shadow-green-500/20",
-      },
-    };
-
-    return colorMap[color] || colorMap.emerald;
-  };
 
   return (
     <section

@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import Link from "next/link";
 import { ArrowUp } from "lucide-react";
+import { scrollToTop } from "@/utils/function/scroll";
 
 export default function Footer() {
   const footerRef = useRef<HTMLElement>(null);
@@ -33,14 +34,6 @@ export default function Footer() {
 
     return () => ctx.revert();
   }, [year]);
-
-  const scrollToTop = () => {
-    gsap.to(window, {
-      duration: 1,
-      scrollTo: 0,
-      ease: "power3.inOut",
-    });
-  };
 
   return (
     <footer

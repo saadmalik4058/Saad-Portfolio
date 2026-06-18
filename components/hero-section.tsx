@@ -5,6 +5,8 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Github, Linkedin, Twitter } from "lucide-react";
+import type { Particle } from "@/utils/types";
+import { scrollToSection } from "@/utils/function/scroll";
 
 export default function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -33,12 +35,12 @@ export default function HeroSection() {
           "-=0.8"
         )
         .from(
-          ctaRef.current?.children,
+          ctaRef.current?.children ?? [],
           { y: 30, opacity: 1, duration: 0.8, stagger: 0.2 },
           "-=0.6"
         )
         .from(
-          socialsRef.current?.children,
+          socialsRef.current?.children ?? [],
           { x: -30, opacity: 0, duration: 0.6, stagger: 0.15 },
           "-=0.5"
         )
@@ -148,22 +150,8 @@ export default function HeroSection() {
   }, []);
 
   const scrollToAbout = () => {
-    gsap.to(window, {
-      duration: 1,
-      scrollTo: { y: "#about", offsetY: 80 },
-      ease: "power3.inOut",
-    });
+    scrollToSection("about");
   };
-
-  interface Particle {
-    x: number;
-    y: number;
-    radius: number;
-    color: string;
-    speed: number;
-    direction: number;
-    opacity: number;
-  }
 
   return (
     <section
@@ -214,13 +202,7 @@ export default function HeroSection() {
           >
             <Button
               className="bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white px-10  text-lg font-semibold rounded-xl py-5 shadow-lg transform hover:scale-105 transition-all duration-300"
-              onClick={() => {
-                gsap.to(window, {
-                  duration: 1,
-                  scrollTo: { y: "#projects", offsetY: 40 },
-                  ease: "power3.inOut",
-                });
-              }}
+              onClick={() => scrollToSection("projects", 40)}
             >
               Explore My Projects
             </Button>
@@ -228,13 +210,7 @@ export default function HeroSection() {
             <Button
               variant="outline"
               className="border-2 border-emerald-400 hover:text-white text-emerald-400 hover:bg-emerald-400/10 px-10  text-lg font-semibold rounded-xl shadow-lg py-5 transform hover:scale-105 transition-all duration-300"
-              onClick={() => {
-                gsap.to(window, {
-                  duration: 1,
-                  scrollTo: { y: "#contact", offsetY: 80 },
-                  ease: "power3.inOut",
-                });
-              }}
+              onClick={() => scrollToSection("contact")}
             >
               Get in Touch
             </Button>
